@@ -1,10 +1,10 @@
 import React from "react";
-import "./button.scss";
+import style from "./Button.module.scss";
 
 
 function Button()  {
   return (
-    <button className="botao">
+    <button className={style.botao}>
       Botão
     </button>
   );
