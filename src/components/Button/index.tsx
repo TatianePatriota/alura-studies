@@ -2,10 +2,10 @@ import React from "react";
 import style from "./Button.module.scss";
 
 
-function Button()  {
+function Button(props: { children: string })  {
   return (
     <button className={style.botao}>
-      Botão
+      {props.children}
     </button>
   );
 }
