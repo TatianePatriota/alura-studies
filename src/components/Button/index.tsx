@@ -1,8 +1,10 @@
 import React from "react";
+import "./button.scss";
+
 
 function Button()  {
   return (
-    <button>
+    <button className="botao">
       Botão
     </button>
   );
