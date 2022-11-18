@@ -12,7 +12,7 @@ function Lista({tarefas, selecionaTarefa}: Props) {
     <aside className={style.listaTarefas}>
       <h2>Estudos do dia</h2>
       <ul>
-        {tarefas.map((item)=> (
+        {tarefas.map((item) => (
           <Item selecionaTarefa={selecionaTarefa} key={item.id} {...item}/>
         ))}
       </ul>
