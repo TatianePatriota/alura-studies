@@ -2,10 +2,10 @@ import React from "react";
 import style from "./Button.module.scss";
 
 
-function Button(props: { children: string, type?: "button" | "submit" | "reset" | undefined })  {
-  const {type = "button"} = props;
+function Button(props: { children: string, type?: "button" | "submit" | "reset" | undefined, onClick?: () => void})  {
+  const {type = "button", onClick} = props;
   return (
-    <button type={type} className={style.botao}>
+    <button onClick={onClick} type={type} className={style.botao}>
       {props.children}
     </button>
   );
