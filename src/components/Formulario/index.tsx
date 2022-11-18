@@ -4,21 +4,21 @@ import style from "./Formulario.module.scss";
 import { Itarefa } from "../../types/tarefas";
 import { v4 as uuidv4} from "uuid";
 
-const tarefaInicial: Itarefa = {
+const tarefaInicial = (): Itarefa => ({
   tarefa: '',
   tempo: '00:00',
   selecionado: false,
   completado:false,
   id: uuidv4()
-}
+})
 
 function Formulario({setTarefas}: {setTarefas:React.Dispatch<React.SetStateAction<Itarefa[]>>}) {
-  const [tarefa, setTarefa] = useState<Itarefa>(tarefaInicial);
+  const [tarefa, setTarefa] = useState<Itarefa>(() => tarefaInicial());
 
-  function adicionarTarefa(evento: React.FormEvent) {
+  function adicionarTarefa(evento: React.FormEvent) { 
     evento.preventDefault();
   setTarefas(tarefasAntigas => [...tarefasAntigas, tarefa])
-    setTarefa(tarefaInicial)
+    setTarefa(tarefaInicial())
   }
 
   return (
